@@ -1,0 +1,15 @@
+.main-div{
+    height: 100%;
+    width: 100%;
+}
+
+.my-css{
+    color: white;
+    text-align: center;
+    text-decoration: rgb(255, 0, 221);
+    margin-top: 5rem;
+}
+
+.my-css-w-f{
+    width: 100%;
+}
