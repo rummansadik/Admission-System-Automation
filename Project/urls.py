@@ -16,6 +16,9 @@ urlpatterns = [
     path('login/teacher',
          LoginView.as_view(template_name='teacher/login.html'),
          name='teacher_login'),
+    path('logout/teacher',
+         LogoutView.as_view(template_name='teacher/logout.html'),
+         name='teacher_logout'),
     path('admin/', admin.site.urls),
 ]
 
