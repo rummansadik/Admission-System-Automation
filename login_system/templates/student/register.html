@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="content-section">
+        <div class="col-md-6 d-flex flex-center bd-highlight mb-3">
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-primary">
+                    <a href="{% url 'student_login' %}">
+                        <img src="/media/teacher.png" alt="teacher" height="100px">
+                    </a>
+                </button>
+            </div>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group text-white">
+                <legend class="border-bottom mb-4">Join Today</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="{% url 'student_login' %}">Sign In</a>
+            </small>
+        </div>
+    </div>
+{% endblock content%}

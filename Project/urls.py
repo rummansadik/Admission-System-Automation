@@ -4,9 +4,12 @@ from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 from login_system.views import home
+from login_system.views import student_register
 
 urlpatterns = [
     path('', home, name='home_page'),
+    path('register/student',
+         student_register, name='student_register'),
     path('login/student',
          LoginView.as_view(template_name='student/login.html'),
          name='student_login'),
