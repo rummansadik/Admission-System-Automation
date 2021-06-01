@@ -3,8 +3,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
-from login_system.views import home
-from login_system.views import student_register
+from login_system.views import home, student_register, teacher_register
+
 
 urlpatterns = [
     path('', home, name='home_page'),
@@ -16,6 +16,8 @@ urlpatterns = [
     path('logout/student',
          LogoutView.as_view(template_name='student/logout.html'),
          name='student_logout'),
+    path('register/teacher',
+         teacher_register, name='teacher_register'),
     path('login/teacher',
          LoginView.as_view(template_name='teacher/login.html'),
          name='teacher_login'),
