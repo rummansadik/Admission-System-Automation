@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.contrib import messages
-from .forms import UserRegisterForm
+from .forms import StudentRegisterForm, TeacherRegisterForm
 
 
 def home(request):
@@ -9,27 +9,27 @@ def home(request):
 
 def student_register(request):
     if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
+        form = StudentRegisterForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}!')
             return redirect('home_page')
     else:
-        form = UserRegisterForm()
+        form = StudentRegisterForm()
     return render(request, 'student/register.html', {'form': form})
 
 
 def teacher_register(request):
     if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
+        form = TeacherRegisterForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}!')
             return redirect('home_page')
     else:
-        form = UserRegisterForm()
+        form = TeacherRegisterForm()
     return render(request, 'teacher/register.html', {'form': form})
 
 
