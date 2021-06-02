@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-{% block content %}
+<!-- Nav Bar -->
+{% block nav-content %}
+<a class="navbar-brand mt-3" href="{% url 'home_page' %}">Home</a>
+{% endblock nav-content %}
+
+
+<!-- Master Head (Main Content) -->
+{% block main-content %}
 <div class="content-section">
     <div class="col-md-6 d-flex flex-center bd-highlight mb-3">
         <div class="d-flex justify-content-center">
@@ -28,4 +35,4 @@
         </small>
     </div>
 </div>
-{% endblock content%}
+{% endblock main-content %}

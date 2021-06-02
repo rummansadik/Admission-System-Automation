@@ -1,8 +1,37 @@
 {% extends 'base.html' %}
-{% block content %}
+
+<!-- Nav Bar -->
+{% block nav-content %}
+<a class="navbar-brand" href="{% url 'home_page' %}">Home</a>
+<button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+    data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+    aria-label="Toggle navigation">
+    Menu
+    <i class="fas fa-bars"></i>
+</button>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+    </ul>
+</div>
+{% endblock nav-content %}
+
+
+<!-- Master Head (Main Content) -->
+{% block main-content %}
 <div class="text-center">
     <h1 class="mx-auto my-0 text-uppercase">Admission Automation System</h1>
     <a class="btn btn-primary mt-5 mx-2" href="{% url 'teacher_login' %}">Teacher Login</a>
     <a class="btn btn-primary mt-5 mx-2" href="{% url 'student_login' %}">Student Login</a>
 </div>
-{% endblock %}
+{% endblock main-content %}
+
+<!-- Details Block -->
+{% block details-content %}
+{% include 'about.html' %}
+{% include 'projects.html' %}
+{% include 'subscribe.html' %}
+{% include 'contact.html' %}
+{% endblock details-content %}
