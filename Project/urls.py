@@ -16,7 +16,7 @@ urlpatterns = [
     path('student/login/',
          LoginView.as_view(template_name='student/login.html'),
          name='student_login'),
-    path('student/logout',
+    path('student/logout/',
          LogoutView.as_view(template_name='student/logout.html'),
          name='student_logout'),
 
