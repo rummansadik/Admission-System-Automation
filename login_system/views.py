@@ -31,3 +31,11 @@ def teacher_register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'teacher/register.html', {'form': form})
+
+
+def student_profile(request):
+    return render(request, 'student/profile.html')
+
+
+def teacher_profile(request):
+    return render(request, 'teacher/profile.html')

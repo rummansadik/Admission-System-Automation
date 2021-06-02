@@ -3,13 +3,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
-from login_system.views import home, student_register, teacher_register
+from login_system.views import home, student_register, teacher_register, student_profile, teacher_profile
 
 
 urlpatterns = [
     path('', home, name='home_page'),
     path('register/student',
          student_register, name='student_register'),
+    path('profile/student',
+         student_profile, name='student_profile'),
     path('login/student',
          LoginView.as_view(template_name='student/login.html'),
          name='student_login'),
@@ -18,6 +20,8 @@ urlpatterns = [
          name='student_logout'),
     path('register/teacher',
          teacher_register, name='teacher_register'),
+    path('profile/teacher',
+         teacher_profile, name='teacher_profile'),
     path('login/teacher',
          LoginView.as_view(template_name='teacher/login.html'),
          name='teacher_login'),
