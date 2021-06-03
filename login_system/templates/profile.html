@@ -3,7 +3,13 @@
 
 <!-- Nav Bar -->
 {% block nav-content %}
-<a class="navbar-brand mt-3" href="{% url 'home_page' %}">Home</a>
+<a class="navbar-brand" href="{% url 'home_page' %}">Home</a>
+<a class="navbar-brand" href="{% url 'profile' %}">Profile</a>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+</div>
 {% endblock nav-content %}
 
 
@@ -12,12 +18,7 @@
 <div class='main-div d-flex flex-column bd-highlight mb-3'>
     <div class="row d-flex justify-content-around my-5">
         <div class="content-section text-white">
-            <h2>You have been logged out</h2>
-            <div class="border-top pt-3">
-                <small class="text-muted">
-                    <a href="{% url 'teacher_login' %}">Log In Again</a>
-                </small>
-            </div>
+            {{ user.username }}
         </div>
     </div>
 </div>

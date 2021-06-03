@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from .forms import StudentRegisterForm, TeacherRegisterForm
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -33,9 +34,6 @@ def teacher_register(request):
     return render(request, 'teacher/register.html', {'form': form})
 
 
-def student_profile(request):
-    return render(request, 'student/profile.html')
-
-
-def teacher_profile(request):
-    return render(request, 'teacher/profile.html')
+@login_required
+def profile(request):
+    return render(request, 'profile.html')

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+
 <!-- Nav Bar -->
 {% block nav-content %}
 <a class="navbar-brand mt-3" href="{% url 'home_page' %}">Home</a>
@@ -14,7 +15,7 @@
             <h2>You have been logged out</h2>
             <div class="border-top pt-3">
                 <small class="text-muted">
-                    <a href="{% url 'student_login' %}">Log In Again</a>
+                    <a href="{% url 'home_page' %}">Log In Again</a>
                 </small>
             </div>
         </div>
