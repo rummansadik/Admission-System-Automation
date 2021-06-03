@@ -22,7 +22,7 @@ class TeacherRegisterForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2', 'employee_id']
 
 
-class UserUpdateForm(forms.ModelForm):
+class StudentUpdateForm(forms.ModelForm):
     email = forms.EmailField()
 
     class Meta:
